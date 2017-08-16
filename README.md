@@ -26,4 +26,14 @@ Configuring a Linux Server to Host a Web Application
 * `chmod 644 .ssh/authorized_keys`
 * `service ssh restart`
 * You can user ssh to login new user `ssh -i privatekeyfile grader -p 2200 grader@34.227.172.211`
-6. 
+6. Disable root login
+* `sudo nano /etc/ssh/sshd_config`
+* Uncomment `PasswordAuthentication no`
+* Change `PermitRootLogin without-password` to `PermitRootLogin no`
+* `service ssh restart`
+7. Steps to configuring Ports in UFW
+* Allow all TCP connection through 2200 `sudo ufw allow 2200/tcp`
+* Allow basic http server by `sudo ufw allow 80/tcp` or `sudo ufw allw www`
+* Allow all NTP connection through port 123 by `sudo ufw allow ntp`ss
+* Enable firewall by `sudo ufw enable`
+* You can check status by `sudo ufw status`
