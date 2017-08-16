@@ -18,12 +18,12 @@ Configuring a Linux Server to Host a Web Application
 ... * Run `reboot` to restart the machine.
 4. Generate Key pair on our local machine using `ssh-keygen` and run it.
 5. Installing a Publick key:
-... * Login to server as grader
-... * Create `.ssh` using `mkdir .ssh`
-... * Create a new file within this `.ssh` directory called `authorized_keys` `touch .ssh/authorized_keys`
-... * `vim .ssh/authorized_keys`
-... * `chmod 700 .ssh`
-... * `chmod 644 .ssh/authorized_keys`
-... * `service ssh restart`
-... * You can user ssh to login new user `ssh -i privatekeyfile grader -p 2200 grader@34.227.172.211`
+...* Login to server as grader
+...* Create `.ssh` using `mkdir .ssh`
+...* Create a new file within this `.ssh` directory called `authorized_keys` `touch .ssh/authorized_keys`
+...* `vim .ssh/authorized_keys`
+...* `chmod 700 .ssh`
+...* `chmod 644 .ssh/authorized_keys`
+...* `service ssh restart`
+...* You can user ssh to login new user `ssh -i privatekeyfile grader -p 2200 grader@34.227.172.211`
 6. 
