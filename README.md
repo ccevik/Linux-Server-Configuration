@@ -94,12 +94,12 @@ Configuring a Linux Server to Host a Web Application
 * Move to catalog-project by typing `cd /var/www/catalog-project`
 * Create `catalog.wsgi` file `sudo nano catalog.wsgi` and add the following
 
- `#!/usr/bin/python
-import sys
-import logging
-logging.basicConfig(stream=sys.stderr)
-sys.path.insert(0,"/var/www/catalog-project/")
+`#!/usr/bin/python`
+`import sys`
+`import logging`
+`logging.basicConfig(stream=sys.stderr)`
+`sys.path.insert(0,"/var/www/catalog-project/")`
 
-from psqlcatalog import app as application
-application.secret_key = 'super_secret_key'
+`from psqlcatalog import app as application`
+`application.secret_key = 'super_secret_key'`
 `
