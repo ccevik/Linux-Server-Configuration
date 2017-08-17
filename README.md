@@ -37,3 +37,18 @@ Configuring a Linux Server to Host a Web Application
 * Allow all NTP connection through port 123 by `sudo ufw allow ntp`ss
 * Enable firewall by `sudo ufw enable`
 * You can check status by `sudo ufw status`
+8. Install Apache to serve a Python mod_wsgi application
+* Install Apache by `sudo apt-get install apache2`
+* Install mod_wsgi by `install apt-get install python-setuptools libapache2-mod-wsgi`
+* Restart Apache by `sudo service apache2 restart`
+9. Install and Configure PostgreSQL
+* Install PostgreSQL by using `sudo apt-get install postgresql`
+* Make sure remote connections are not allowe by checking `sudo vim /etc/postgresql/9.3/main/pg_hba.conf`
+* Connect as user postgres by typing `sudo su - postgres`
+* Type `psql` to bring up the PostgreSQL prompt
+* Create a PostgreSQL user called `catalog`, type `CREATE USER catalog WITH PASSWORD 'your_password';`
+* Create an empty database called catalog by typing `sudo -u postgres createdb -O catalog catalog`
+* Give user `catalog` permission to catalog database `GRANT ALL PRIVILEGES ON DATABASE catalog TO catalog;`
+* Check if the user created by typing `\du`
+* Quit postgreSQL by typing `\q` and to exit `exit`
+
