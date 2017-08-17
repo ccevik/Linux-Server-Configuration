@@ -93,6 +93,7 @@ Configuring a Linux Server to Host a Web Application
 12. Create the .wsgi file
 * Move to catalog-project by typing `cd /var/www/catalog-project`
 * Create `catalog.wsgi` file `sudo nano catalog.wsgi` and add the following
+
  `#!/usr/bin/python
 import sys
 import logging
