@@ -51,4 +51,18 @@ Configuring a Linux Server to Host a Web Application
 * Give user `catalog` permission to catalog database `GRANT ALL PRIVILEGES ON DATABASE catalog TO catalog;`
 * Check if the user created by typing `\du`
 * Quit postgreSQL by typing `\q` and to exit `exit`
-
+10. Install git and setup the project
+* Install git by typing `sudo apt-get install git`
+* Go to /var/www directory by typing `cd /var/www`
+* Create the app directory by `mkdir catalog-project`
+* Move to `catalog-project` directory by typing `cd catalog-project`
+* Clone the project to the virtual machine by typing `git clone https://github.com/ccevik/psql-catalog psqlcatalog`
+* Move to psqlcatalog by typing `cd psqlcatalog`
+* Change file  name `project.py` to `__init__.py`
+* Edit `database_setup.py` and `__init__.py` by changing
+  `engine = create_engine('postgresql://catalog:catalog@localhost/catalog/')`
+* Install pip by typing `sudo apt-get install python-pip`
+* Type all dependencies in `requirements.txt`
+* Use pip to install all dependencies `sudo pip install -r requirement.txt`
+* Install psycopg2 by typing `sudo apt-get -qqy install postgresql python-psycopg2`
+* Create database schema by typing `sudo python database_setup.py`
