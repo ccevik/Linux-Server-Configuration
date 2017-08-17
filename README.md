@@ -117,7 +117,7 @@ application.secret_key = 'super_secret_key'
 13. Restart Apache
 * `sudo service apache2 restart`
 
-14. `sudo python __init__.py` and visit `http://34.227.172.211`
+14. `sudo python __init__.py` and visit [http://34.227.172.211](http://34.227.172.211)
 
 ## References
 [Engine Configuration](http://docs.sqlalchemy.org/en/latest/core/engines.html)
