@@ -66,3 +66,39 @@ Configuring a Linux Server to Host a Web Application
 * Use pip to install all dependencies `sudo pip install -r requirement.txt`
 * Install psycopg2 by typing `sudo apt-get -qqy install postgresql python-psycopg2`
 * Create database schema by typing `sudo python database_setup.py`
+11. Configure and Enable a new Virtual host
+* Move to `sites-available` directory by typing `/etc/apache2/sites-available`
+* Create catalog.conf file `sudo nano catalog.conf`
+* Add the following to `catalog.conf` to configure the virtual host
+  `<VirtualHost *:80>
+
+                ServerAdmin grader@34.227.172.211
+                WSGIScriptAlias / /var/www/catalog-project/catalog.wsgi
+                <Directory /var/www/catalog-project/>
+                        Order allow,deny
+                        Allow from all
+                </Directory>
+                Alias /static /var/www/catalog-project/psqlcatalog/static
+                <Directory /var/www/catalog-project/psqlcatalog/static/>
+                        Order allow,deny
+                        Allow from all
+                </Directory>
+                ErrorLog ${APACHE_LOG_DIR}/error.log
+                LogLevel warn
+                CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+`
+* Enable the virtual host by typing `sudo a2ensite catalog.conf`
+12. Create the .wsgi file
+* Move to catalog-project by typing `cd /var/www/catalog-project`
+* Create `catalog.wsgi` file `sudo nano catalog.wsgi` and add the following
+ `#!/usr/bin/python
+import sys
+import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0,"/var/www/catalog-project/")
+
+from psqlcatalog import app as application
+application.secret_key = 'super_secret_key'
+`
