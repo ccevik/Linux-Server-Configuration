@@ -1,15 +1,15 @@
 # Linux-Server-Configuration
----
+
 Configuring a Linux Server to Host a Web Application
 
 ## Server
----
+
 * IP Address: 34.227.172.211
 
 * Accessible SSH port: 2200
 
 ## Tasks
----
+
 1. Create a user `grader` using command: `sudo adduser thenameofuser`
 
 2. Give user `grader` `sudo` access using command: `usermod -aG sudo grader`
