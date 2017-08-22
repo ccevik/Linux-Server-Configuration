@@ -129,3 +129,9 @@ application.secret_key = 'super_secret_key'
 [Secure PostgreSQL](https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps)
 
 [Setup SSH Keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
+
+## Suggestion 
+[To improve server security](http://www.fail2ban.org/wiki/index.php/Main_Page)
+
+[To provide server's status information](https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04) 
+[To provide server's status information](https://www.digitalocean.com/community/tutorials/how-to-install-munin-on-an-ubuntu-vps)
